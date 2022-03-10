@@ -41,8 +41,11 @@ function App() {
       if (!gameOver) {
         // Users answer
         const answer = e.currentTarget.value
+        console.log(answer)
         // Check answer against correct answer
         const correct = questions[number].correct_answer === answer
+        console.log(questions[number].correct_answer)
+        console.log(correct)
         // Add score if answer is correct
         if (correct) setScore(prev => prev + 1)
         // Save answer in the array for user answers
@@ -77,7 +80,7 @@ function App() {
             </button>
             ) : null }
 
-            { !gameOver ? <p className="score"> Score:</p> : null}
+            { !gameOver ? <p className="score"> Score: {score}</p> : null}
                 
             {loading && <p>Loading questions...</p>}
 
